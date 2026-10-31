@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: dropbazar-blogger-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DROPBAZAR_API_URL
+        value: https://dropbazarbd.com/api/v1
+      - key: DROPBAZAR_API_TOKEN
+        sync: false
+      - key: SHOP_NAME
+        value: My Blogger Store
+      - key: SHOP_PROFIT_PERCENT
+        value: "20"
+      - key: ALLOWED_ORIGINS
+        value: "*"
